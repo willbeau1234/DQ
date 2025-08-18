@@ -1,0 +1,9 @@
+date,location,total_sales,transaction_count,customer_count,labor_hours,labor_cost,food_cost,waste_amount,drive_thru_time,order_accuracy,customer_satisfaction,weather,events,notes
+2025-08-17,DQ001,4850.75,247,198,48.5,728.50,1455.25,125.00,125,94.5,4.2,Sunny,None,Busy Saturday - ran low on vanilla ice cream
+2025-08-16,DQ001,3240.50,189,156,42.0,630.00,972.15,89.50,118,96.8,4.4,Partly Cloudy,None,Smooth operations
+2025-08-15,DQ001,2890.25,165,142,38.5,577.50,867.08,67.80,112,97.2,4.3,Overcast,Local Festival,Festival brought extra traffic
+2025-08-17,DQ002,5120.40,268,215,52.0,780.00,1536.12,142.30,132,93.8,4.1,Sunny,None,Drive-thru backed up during lunch
+2025-08-16,DQ002,3680.90,198,167,45.5,682.50,1104.27,98.75,124,95.2,4.5,Partly Cloudy,School Event,Local high school game nearby
+2025-08-15,DQ002,3156.80,172,145,41.0,615.00,946.04,78.90,119,96.1,4.3,Overcast,Local Festival,Good day despite weather
+2025-08-14,DQ001,2756.45,158,134,36.0,540.00,826.94,55.30,108,97.8,4.5,Clear,None,Typical Thursday operations
+2025-08-14,DQ002,2945.60,169,142,38.5,577.50,883.68,62.45,114,96.5,4.4,Clear,None,Steady midweek business

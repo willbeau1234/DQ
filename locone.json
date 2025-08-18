@@ -1,0 +1,33 @@
+{
+  "date": "2025-08-17",
+  "location": "DQ_Location_1",
+  "sales_metrics": {
+    "total_sales": 4850.75,
+    "transaction_count": 247,
+    "customer_count": 198,
+    "average_ticket": 19.64
+  },
+  "labor_metrics": {
+    "total_hours": 48.5,
+    "total_cost": 728.50,
+    "labor_percentage": 15.02
+  },
+  "cost_metrics": {
+    "food_cost": 1455.25,
+    "food_percentage": 30.00,
+    "waste_amount": 125.00,
+    "waste_percentage": 2.58
+  },
+  "operational_metrics": {
+    "drive_thru_time": 125,
+    "order_accuracy": 94.5,
+    "customer_satisfaction": 4.2
+  },
+  "context": {
+    "weather": "Sunny",
+    "temperature": 78,
+    "events": "None",
+    "promotions": "Buy One Get One Blizzards",
+    "notes": "Busy Saturday - ran low on vanilla ice cream around 3pm. Had to 86 vanilla cone dips for 2 hours."
+  }
+}

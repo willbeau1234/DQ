@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
       .from("daily_data")
       .select("*")
       .eq("store_id", storeId)
-      .eq("date", date)
+      .eq("data_date", date)
       .single()
 
     if (dataError || !dailyData) {
@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
     // Get store information
     const { data: store, error: storeError } = await supabase
       .from("stores")
-      .select("name, location")
+      .select("name, address")
       .eq("id", storeId)
       .single()
 
@@ -76,7 +76,7 @@ function getSystemPromptForRole(role: string): string {
 
 function createDataPrompt(dailyData: any, store: any, date: string): string {
   return `
-Generate a comprehensive daily report for ${store.name} (${store.location}) for ${date}.
+Generate a comprehensive daily report for ${store.name} (${store.address}) for ${date}.
 
 **Daily Performance Data:**
 - Total Sales: $${dailyData.total_sales}

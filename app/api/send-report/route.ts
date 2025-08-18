@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     // Get store information
     const { data: store, error: storeError } = await supabase
       .from("stores")
-      .select("name, location")
+      .select("name, address")
       .eq("id", report.store_id)
       .single()
 
@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
           to: recipient.email,
           recipientName: recipient.name,
           storeName: store.name,
-          storeLocation: store.location,
+          storeLocation: store.address,
           reportDate: report.date,
           reportRole: report.role,
           reportContent: report.content,

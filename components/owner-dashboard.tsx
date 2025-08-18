@@ -7,6 +7,7 @@ import { PerformanceMetrics } from "@/components/performance-metrics"
 import { StoreOverview } from "@/components/store-overview"
 import { ProfitabilityAnalysis } from "@/components/profitability-analysis"
 import { TrendingUp, DollarSign, Users, Store } from "lucide-react"
+import { EmailTestPanel } from "@/components/email-test-panel"
 
 interface OwnerDashboardProps {
   user: any
@@ -94,8 +95,9 @@ export function OwnerDashboard({ user, profile }: OwnerDashboardProps) {
 
         <TabsContent value="data" className="space-y-4">
           <div className="grid lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 space-y-6">
               <DataUploadSection storeId={profile?.store_id} />
+              <EmailTestPanel storeId={profile?.store_id} />
             </div>
             <div>
               <RecentUploads userId={user.id} />
