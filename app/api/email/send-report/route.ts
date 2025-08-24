@@ -120,16 +120,16 @@ export async function POST(request: NextRequest) {
     const emailHTML = generateEmailHTML(reportSections, scheduledTime, userName || 'User')
 
     const { data, error } = await resend.emails.send({
-      from: 'DQ Dashboard <reports@dqdashboard.com>',
+      from: 'DQ Dashboard <onboarding@resend.dev>',
       to: [to || userEmail],
       subject: `Daily AI Report - ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`,
       html: emailHTML,
     })
 
     if (error) {
-      console.error('Resend Error:', error)
+      console.error('Resend Error Details:', JSON.stringify(error, null, 2))
       return NextResponse.json(
-        { success: false, error: 'Failed to send email' },
+        { success: false, error: `Failed to send email: ${error.message || error}` },
         { status: 500 }
       )
     }
