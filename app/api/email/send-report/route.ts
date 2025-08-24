@@ -121,7 +121,7 @@ export async function POST(request: NextRequest) {
 
     const { data, error } = await resend.emails.send({
       from: 'DQ Dashboard <onboarding@resend.dev>',
-      to: [to || userEmail || 'beaum045@umn.edu'],
+      to: ['beaum045@umn.edu'], // Testing with UMN email
       subject: `Daily AI Report - ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`,
       html: emailHTML,
     })
