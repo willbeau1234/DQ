@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useCallback } from "react"
+import { useAuth } from "@/components/auth-guard"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -25,6 +26,7 @@ interface ReportSection {
 }
 
 export function CustomReportBuilder() {
+  const { user } = useAuth()
   const [selectedTime, setSelectedTime] = useState("9:00 AM")
   const [reportSections, setReportSections] = useState<ReportSection[]>([])
   const [draggedItem, setDraggedItem] = useState<DataSource | null>(null)
@@ -129,11 +131,11 @@ export function CustomReportBuilder() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          to: 'test@example.com', // In production, get from user profile
+          to: user?.email,
           reportSections: serializableReportSections,
           scheduledTime: selectedTime,
-          userEmail: 'test@example.com',
-          userName: 'Dashboard User'
+          userEmail: user?.email,
+          userName: user?.firstName || user?.email?.split('@')[0] || 'User'
         }),
       })
 
