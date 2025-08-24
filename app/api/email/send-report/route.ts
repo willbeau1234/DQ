@@ -120,7 +120,7 @@ export async function POST(request: NextRequest) {
     const emailHTML = generateEmailHTML(reportSections, scheduledTime, userName || 'User')
 
     const { data, error } = await resend.emails.send({
-      from: 'DQ Dashboard <willbeaumaster@icloud.com>',
+      from: 'DQ Dashboard <reports@operationlensai.com>',
       to: ['beaum045@umn.edu'], // Testing with UMN email
       subject: `Daily AI Report - ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`,
       html: emailHTML,
